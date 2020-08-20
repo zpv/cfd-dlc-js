@@ -303,6 +303,51 @@ std::string JsonMappingApi::GetSchnorrPublicNonce(
       request_message, DlcTransactionsApi::GetSchnorrPublicNonce);
 }
 
+void JsonMappingApi::LoadFunctions(
+     RequestFunctionMap *request_map,
+     ResponseOnlyFunctionMap *response_only_map) {
+   if (request_map != nullptr) {
+     request_map->emplace(
+         "CreateFundTransaction", JsonMappingApi::CreateFundTransaction);
+     request_map->emplace(
+         "GetRawFundTxSignature", JsonMappingApi::GetRawFundTxSignature);
+     request_map->emplace(
+         "AddSignatureToFundTransaction", JsonMappingApi::AddSignatureToFundTransaction);
+     request_map->emplace(
+         "SignFundTransaction", JsonMappingApi::SignFundTransaction);
+     request_map->emplace(
+         "VerifyFundTxSignature", JsonMappingApi::VerifyFundTxSignature);
+     request_map->emplace("CreateRefundTransaction", JsonMappingApi::CreateRefundTransaction);
+     request_map->emplace("CreateCet", JsonMappingApi::CreateCet);
+     request_map->emplace(
+         "CreateClosingTransaction", JsonMappingApi::CreateClosingTransaction);
+     request_map->emplace("CreatePenaltyTransaction", JsonMappingApi::CreatePenaltyTransaction);
+     request_map->emplace("CreateMutualClosingTransaction", JsonMappingApi::CreateMutualClosingTransaction);
+     request_map->emplace("SignClosingTransaction", JsonMappingApi::SignClosingTransaction);
+     request_map->emplace(
+         "GetRawCetSignature", JsonMappingApi::GetRawCetSignature);
+     request_map->emplace(
+         "GetRawCetSignatures", JsonMappingApi::GetRawCetSignatures);
+     request_map->emplace("GetRawMutualClosingTxSignature", JsonMappingApi::GetRawMutualClosingTxSignature);
+     request_map->emplace("AddSignaturesToCet", JsonMappingApi::AddSignaturesToCet);
+     request_map->emplace("VerifyCetSignature", JsonMappingApi::VerifyCetSignature);
+     request_map->emplace(
+         "VerifyCetSignatures", JsonMappingApi::VerifyCetSignatures);
+     request_map->emplace(
+         "AddSignaturesToMutualClosingTx", JsonMappingApi::AddSignaturesToMutualClosingTx);
+     request_map->emplace(
+         "VerifyMutualClosingTxSignature", JsonMappingApi::VerifyMutualClosingTxSignature);
+     request_map->emplace("GetRawRefundTxSignature", JsonMappingApi::GetRawRefundTxSignature);
+     request_map->emplace(
+         "AddSignaturesToRefundTx", JsonMappingApi::AddSignaturesToRefundTx);
+     request_map->emplace("VerifyRefundTxSignature", JsonMappingApi::VerifyRefundTxSignature);
+     request_map->emplace(
+         "SchnorrSign", JsonMappingApi::SchnorrSign);
+     request_map->emplace(
+         "GetSchnorrPublicNonce", JsonMappingApi::GetSchnorrPublicNonce);
+   }
+ }
+
 }  // namespace json
 }  // namespace api
 }  // namespace js
