@@ -117,6 +117,11 @@ Value CreateClosingTransaction(const CallbackInfo &information) {
                           JsonMappingApi::CreateClosingTransaction);
 }
 
+Value CreateDlcTransactions(const CallbackInfo &information) {
+  return NodeAddonJsonApi(information,
+                          JsonMappingApi::CreateDlcTransactions);
+}
+
 Value CreatePenaltyTransaction(const CallbackInfo &information) {
   return NodeAddonJsonApi(information,
                           JsonMappingApi::CreatePenaltyTransaction);
