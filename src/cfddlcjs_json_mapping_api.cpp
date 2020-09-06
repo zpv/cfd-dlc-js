@@ -319,6 +319,7 @@ void JsonMappingApi::LoadFunctions(
          "VerifyFundTxSignature", JsonMappingApi::VerifyFundTxSignature);
      request_map->emplace("CreateRefundTransaction", JsonMappingApi::CreateRefundTransaction);
      request_map->emplace("CreateCet", JsonMappingApi::CreateCet);
+     request_map->emplace("CreateDlcTransactions", JsonMappingApi::CreateDlcTransactions);
      request_map->emplace(
          "CreateClosingTransaction", JsonMappingApi::CreateClosingTransaction);
      request_map->emplace("CreatePenaltyTransaction", JsonMappingApi::CreatePenaltyTransaction);
